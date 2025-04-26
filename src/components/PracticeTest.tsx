@@ -113,7 +113,7 @@ const PracticeTestApp: React.FC = () => {
           className={`py-2 px-4 font-medium text-sm ${activeTab === 'Class test' ? 'text-blue-500 border-b-2 border-blue-500' : 'text-gray-500'}`}
           onClick={() => setActiveTab('Class test')}
         >
-          Class Tests
+          Class Test
         </button>
         <button
           className={`py-2 px-4 font-medium text-sm ${activeTab === 'Practice Test' ? 'text-blue-500 border-b-2 border-blue-500' : 'text-gray-500'}`}
@@ -148,7 +148,8 @@ const PracticeTestApp: React.FC = () => {
 </h3>
 
       {/* Action Buttons */}
-<div className="flex items-center justify-between mb-6 bg-white">
+{activeTab === 'Practice Test' && (
+  <div className="flex items-center justify-between mb-6 bg-white">
   {/* Left Text Button */}
   <h3 className='text-blue-950'>{activeTab} List</h3>
 
@@ -157,6 +158,7 @@ const PracticeTestApp: React.FC = () => {
     Start New Practice Test
   </button>
 </div>
+)}
 
 
       {/* Test List */}
@@ -167,7 +169,7 @@ const PracticeTestApp: React.FC = () => {
       </div>
 
       {/* Result Section (shown only for previous tests tab) */}
-      {activeTab === 'Class test' || activeTab == 'Worksheet' && (
+      {(activeTab === 'Class test') || (activeTab === 'Worksheet') && (
         <div className="mt-6 pt-4 border-t border-gray-200">
          
           <div className="text-gray-600">
