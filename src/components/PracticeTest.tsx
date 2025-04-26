@@ -51,7 +51,22 @@ const PracticeTestApp: React.FC = () => {
       timeTaken: '45 Min',
       score: '70%',
       code: '110'
-    }
+    },
+    {
+      id: '3',
+      subject: 'Social Science',
+      date: '20th Apr 2025',
+      chapterCovered: '3',
+      testTime: '10:00 AM - 11:00 AM',
+      totalQuestions: 30,
+      correctAnswers: 18,
+      wrongAnswers: 10,
+      unanswered: 2,
+      duration: '60 Min',
+      timeTaken: '52 Min',
+      score: '60%',
+      code: '105'
+    },
   ];
 
   const toggleExpand = (id: string) => {
@@ -68,8 +83,8 @@ const PracticeTestApp: React.FC = () => {
           onClick={() => toggleExpand(test.id)}
         >
           <div>
-            <span className="font-medium text-blue-950">{test.subject}</span>
-            <span className="text-blue-950 ml-2">&gt; {test.date}</span>
+            <span className="font-medium" style={{ color: '#003092' }}>{test.subject}</span>
+            <span className="ml-2 font-medium" style={{ color: '#003092' }}>&gt; {test.date}</span>
           </div>
           <svg 
             className={`w-5 h-5 text-gray-500 transition-transform ${isExpanded ? 'rotate-180' : ''}`} 
@@ -86,35 +101,38 @@ const PracticeTestApp: React.FC = () => {
   };
 
   return (
-    <div className="max-w-md mx-auto p-4 min-h-screen bg-white border border-gray-300 rounded-lg">
+    <div className="max-w-md mx-auto p-4 bg-white border border-gray-300 rounded-lg">
       {/* Tabs */}
-      <div className="flex bg-white justify-between border border-gray-300 rounded-md p-1 px-2 mb-4">
+      <div className="flex bg-white justify-between    p-1 px-2 mb-4">
         <div
-          className={`py-2 px-4 font-medium text-sm rounded-md cursor-pointer transition-all ${
+          className={`py-2 mx-2 px-4 border font-medium text-sm rounded-md cursor-pointer transition-all ${
             activeTab === 'Class test'
-              ? 'bg-blue-500 text-white'
+              ? 'text-white'
               : 'text-gray-600 hover:bg-gray-100'
           }`}
+          style={activeTab === 'Class test' ? { backgroundColor: '#003092',  } : {color:'#003092'}}
           onClick={() => setActiveTab('Class test')}
         >
           Class Test
         </div>
         <div
-          className={`py-2 px-4 font-medium text-sm rounded-md cursor-pointer transition-all ${
+          className={`py-2 mx-2 px-4 border font-medium text-sm rounded-md cursor-pointer transition-all ${
             activeTab === 'Practice Test'
-              ? 'bg-blue-500 text-white'
+              ? 'text-white'
               : 'text-gray-600 hover:bg-gray-100'
           }`}
+          style={activeTab === 'Practice Test' ? { backgroundColor: '#003092' } : {color:'#003092'}}
           onClick={() => setActiveTab('Practice Test')}
         >
           Practice Test
         </div>
         <div
-          className={`py-2 px-4 font-medium text-sm rounded-md cursor-pointer transition-all ${
+          className={`py-2 mx-2 px-4 border font-medium text-sm rounded-md cursor-pointer transition-all ${
             activeTab === 'Worksheet'
-              ? 'bg-blue-500 text-white'
+              ? 'text-white'
               : 'text-gray-600 hover:bg-gray-100'
           }`}
+          style={activeTab === 'Worksheet' ? { backgroundColor: '#003092' } : {color:'#003092'}}
           onClick={() => setActiveTab('Worksheet')}
         >
           Worksheet
@@ -122,7 +140,10 @@ const PracticeTestApp: React.FC = () => {
       </div>
 
       {/* Heading */}
-      <h3 className="flex items-center justify-between bg-blue-700 px-4 py-4 text-md font-semibold text-white rounded-md mb-4">
+      <h3
+        className="flex items-center justify-between px-4 py-3 text-md font-semibold text-white rounded-md mb-4"
+        style={{ backgroundColor: '#003092' }}
+      >
         <span>Assessment &gt; {activeTab}</span>
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -142,9 +163,12 @@ const PracticeTestApp: React.FC = () => {
 
       {/* Action Buttons */}
       {activeTab === 'Practice Test' && (
-        <div className="flex items-center justify-between mb-6 bg-white">
-          <h3 className="text-blue-950">{activeTab} List</h3>
-          <div className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md text-sm font-medium transition-colors">
+        <div className="flex items-center justify-between mb-6 bg-white font-semibold">
+          <h3 style={{ color: '#003092' }}>{activeTab} List</h3>
+          <div
+            className="text-white px-4 py-2 rounded-3xl text-sm font-medium transition-colors"
+            style={{ backgroundColor: '#003092' }}
+          >
             Start New Practice Test
           </div>
         </div>
