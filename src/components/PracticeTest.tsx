@@ -105,7 +105,7 @@ const PracticeTestApp: React.FC = () => {
       {/* Tabs */}
       <div className="flex bg-white justify-between    p-1 px-2 mb-4">
         <div
-          className={`py-2 mx-2 px-4 border font-medium text-sm rounded-md cursor-pointer transition-all ${
+          className={`py-2 px-6 mr-1 border font-medium text-sm rounded-md cursor-pointer transition-all ${
             activeTab === 'Class test'
               ? 'text-white'
               : 'text-gray-600 hover:bg-gray-100'
@@ -116,7 +116,7 @@ const PracticeTestApp: React.FC = () => {
           Class Test
         </div>
         <div
-          className={`py-2 mx-2 px-4 border font-medium text-sm rounded-md cursor-pointer transition-all ${
+          className={`py-2 px-6 mx-1 border font-medium text-sm rounded-md cursor-pointer transition-all ${
             activeTab === 'Practice Test'
               ? 'text-white'
               : 'text-gray-600 hover:bg-gray-100'
@@ -127,7 +127,7 @@ const PracticeTestApp: React.FC = () => {
           Practice Test
         </div>
         <div
-          className={`py-2 mx-2 px-4 border font-medium text-sm rounded-md cursor-pointer transition-all ${
+          className={`py-2 px-6 mx-1 border font-medium text-sm rounded-md cursor-pointer transition-all ${
             activeTab === 'Worksheet'
               ? 'text-white'
               : 'text-gray-600 hover:bg-gray-100'
